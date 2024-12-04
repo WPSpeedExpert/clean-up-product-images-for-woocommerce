@@ -1,0 +1,1 @@
+# woocommerce-clean-up-product-images
