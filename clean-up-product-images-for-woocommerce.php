@@ -2,7 +2,7 @@
 /*
 Plugin Name:          Clean Up Product Images for WooCommerce
 Description:          Automatically delete a product's attached images when the product is deleted in WooCommerce.
-Version:              1.0.1
+Version:              1.0.2
 WC requires at least: 4.0.0
 WC tested up to:      9.4.2
 Requires at least:    5.2
