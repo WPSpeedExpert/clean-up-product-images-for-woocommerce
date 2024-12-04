@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name:          WooCommerce Clean Up Product Images
+Plugin Name:          Clean Up Product Images for WooCommerce
 Description:          Automatically delete a product's attached images when the product is deleted in WooCommerce.
 Version:              1.0.0
 WC requires at least: 4.0.0
-WC tested up to:      9.4.2
+WC tested up to:      5.0.1
 Author:               OctaHexa Media LLC
 Author URI:           https://octahexa.com
-Text Domain:          woocommerce-clean-up-product-images
+Text Domain:          clean-up-product-images-for-woocommerce
 Domain Path:          /languages
 License:              GPLv2 or later
-GitHub Plugin URI:    https://github.com/WPSpeedExpert/woocommerce-clean-up-product-images
+GitHub Plugin URI:    https://github.com/WPSpeedExpert/clean-up-product-images-for-woocommerce
 GitHub Branch:        main
 Primary Branch:       main
 */
@@ -24,14 +24,14 @@ if (!defined('ABSPATH')) {
  * Check if WooCommerce is active
  */
 if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
-    add_action('before_delete_post', 'woocommerce_clean_up_product_images', 10, 1);
+    add_action('before_delete_post', 'clean_up_product_images_for_woocommerce', 10, 1);
 
     /**
      * Delete attached images when a WooCommerce product is deleted
      *
      * @param int $post_id The ID of the post being deleted.
      */
-    function woocommerce_clean_up_product_images($post_id)
+    function clean_up_product_images_for_woocommerce($post_id)
     {
         // Ensure this is a WooCommerce product
         if (get_post_type($post_id) !== 'product') {
@@ -67,8 +67,8 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
     add_action('admin_notices', function () {
         echo '<div class="notice notice-error is-dismissible"><p>';
         esc_html_e(
-            'WooCommerce plugin is not activated. Please install and activate WooCommerce to use the WooCommerce Clean Up Product Images plugin.',
-            'woocommerce-clean-up-product-images'
+            'WooCommerce plugin is not activated. Please install and activate WooCommerce to use the Clean Up Product Images for WooCommerce plugin.',
+            'clean-up-product-images-for-woocommerce'
         );
         echo '</p></div>';
     });
