@@ -1,13 +1,13 @@
 # Clean Up Product Images for WooCommerce
 
-**Contributors:** octahexa, wp-speed-expert  
-**Tags:** woocommerce, product images, delete images, cleanup, images  
-**Requires at least:** 5.2  
-**Tested up to:** 6.7  
-**Requires PHP:** 7.2  
-**Stable tag:** 1.0.1  
-**License:** GPLv2 or later  
-**License URI:** [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)  
+**Contributors:** octahexa
+**Tags:** woocommerce, product images, delete images, cleanup, images
+**Requires at least:** 5.2
+**Tested up to:** 6.7
+**Requires PHP:** 7.2
+**Stable tag:** 1.0.2  
+**License:** GPLv2 or later
+**License URI:** [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
 
 Automatically delete a product's attached images when the product is deleted in WooCommerce.
 

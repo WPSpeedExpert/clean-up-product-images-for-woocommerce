@@ -5,6 +5,8 @@ Description:          Automatically delete a product's attached images when the 
 Version:              1.0.1
 WC requires at least: 4.0.0
 WC tested up to:      9.4.2
+Requires at least:    5.2
+Requires PHP:         7.2
 Author:               OctaHexa Media LLC
 Author URI:           https://octahexa.com
 Text Domain:          clean-up-product-images-for-woocommerce
