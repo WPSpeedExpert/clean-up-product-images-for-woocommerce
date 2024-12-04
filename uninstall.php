@@ -2,7 +2,7 @@
 /*
  * Filename: uninstall.php
  * Version: 1.0.0
- * Description: Uninstall script for the WooCommerce Clean Up Product Images plugin.
+ * Description: Uninstall script for the Clean Up Product Images for WooCommerce plugin.
  */
 
 // Exit if accessed directly
