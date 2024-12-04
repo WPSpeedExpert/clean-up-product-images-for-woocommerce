@@ -2,9 +2,9 @@
 /*
 Plugin Name:          Clean Up Product Images for WooCommerce
 Description:          Automatically delete a product's attached images when the product is deleted in WooCommerce.
-Version:              1.0.0
+Version:              1.0.1
 WC requires at least: 4.0.0
-WC tested up to:      5.0.1
+WC tested up to:      9.4.2
 Author:               OctaHexa Media LLC
 Author URI:           https://octahexa.com
 Text Domain:          clean-up-product-images-for-woocommerce
@@ -19,6 +19,14 @@ Primary Branch:       main
 if (!defined('ABSPATH')) {
     exit;
 }
+
+/**
+ * Load Plugin Text Domain
+ */
+function cupiwc_load_textdomain() {
+    load_plugin_textdomain('clean-up-product-images-for-woocommerce', false, dirname(plugin_basename(__FILE__)) . '/languages');
+}
+add_action('plugins_loaded', 'cupiwc_load_textdomain');
 
 /**
  * Check if WooCommerce is active
@@ -38,8 +46,6 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
             return;
         }
 
-        global $wpdb;
-
         // Get all attachments for the product
         $args = [
             'post_parent' => $post_id,
@@ -54,7 +60,7 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
         if (!empty($attachments)) {
             foreach ($attachments as $attachment) {
                 wp_delete_attachment($attachment->ID, true); // Delete attachment file
-                $wpdb->delete($wpdb->postmeta, ['post_id' => $attachment->ID], ['%d']); // Clean up metadata
+                delete_post_meta($attachment->ID, ''); // Clean up metadata
                 wp_delete_post($attachment->ID, true); // Remove post record
             }
         }
